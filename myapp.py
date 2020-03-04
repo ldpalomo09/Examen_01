@@ -41,6 +41,7 @@ def html_xProvinca():
     df1 = manipuladatos.votantesPorProvincia(df1)
     return render_template('xProvincia.html',  tables=[df1.to_html(classes='table table-striped')], titles=df1.columns.values) 
 
+
 @app.route('/xFemenino', methods=("POST", "GET"))
 def html_xFemenino():
     df1 = pd.read_csv('./Data/padron.csv',encoding='ISO-8859-1')
@@ -76,6 +77,23 @@ def html_xBusca():
     except Exception as e:    
     
         return render_template('xBusca.html')
+
+@app.route('/xBuscaDis',  methods=("POST", "GET"))
+def html_xBuscaDis():
+    try:
+        if request.method == 'POST':
+            Distrito = request.form["Distrito"]
+            df1 = pd.read_csv('./Data/padrond.csv',encoding='ISO-8859-1')
+            df1 = manipuladatos.agregaColumnas(df1)
+            df1 = manipuladatos.ListaVotantePorDistrito(df1,Distrito)
+            return render_template('xResulDis.html',  tables=[df1.to_html(classes='table table-striped')], titles=df1.columns.values) 
+    
+        return render_template('xBuscaDis.html')
+    
+    except Exception as e:    
+    
+        return render_template('xBuscaDis.html')
+
 
 
 if __name__ == '__main__':

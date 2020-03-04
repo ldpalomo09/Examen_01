@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    <div class="jumbotrom text-center">
+        <h1>Examen 01</h1>
+        <h1>Padron Nacional</h1>
+        <h1>Resultado de Busqueda por Distrito</h1>
+    </div>
+
+    {% for table in tables %}
+            {{titles[loop.index]}}
+            {{ table|safe }}
+    {% endfor %}
+
+
+{% endblock %}

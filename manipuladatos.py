@@ -6,7 +6,7 @@ def agregaColumnas(miPadron):
     miPadron['Count'] = 1
     return (miPadron)
 
-        
+#agrega columna para conteo distritos        
 def agregaColumnaDistrito (miDistrito):    
     miDistrito['Count'] = 1
     return (miDistrito)
@@ -25,6 +25,11 @@ def ListaVotantesPorProvincia(miPadron):
 def ListaVotantePorCedula(miPadron,CedId):
     resultado = miPadron.loc[miPadron['Cedula'] == CedId]
     return (resultado)
+
+def ListaVotantePorDistrito(miPadron,Distrit):
+    resultado = miPadron.loc[miPadron['Distrito'] == Distrit]
+    return (resultado)
+
 
 #Calcula vontantes por sexo
 def votantesPorSexo(miPadron):
