@@ -1,4 +1,4 @@
-# Examan01
+# Examen 01
  Examen 01
 Nuestro examen
 La estructura para que se ejecute este probrama es de la siguiente manera:
