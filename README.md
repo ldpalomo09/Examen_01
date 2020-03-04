@@ -13,4 +13,9 @@ El file *.ccs debe ir dentro de un folder que se llama \static\css.
 
 Por ultimo los files .py deben ir en el \
 
+El archivo para ejecutar se llama myapp.py, este es el que invoca a Flask.
+Se usan las librerias de Pandas y Flask.
+
+Con Pandas vimos la mejor opcion de usar dataframes y manipular mejor los CSV.
+
 
